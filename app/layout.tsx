@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Clock from './components/Clock'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,13 +11,26 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
+  children,locate
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  locate: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className}`}>
+        
+        <div className='w-full h-screen grid lg:grid-cols-[minmax(800px,100%)_minmax(350px,450px)] grid-cols-1 '>
+          <div className='bg-indigo-50 h-full dark:bg-[#121212] order-last lg:order-first'>
+            <Clock/>
+            {children}
+          </div>
+          
+          <div className='bg-white h-full dark:bg-[#1E1E1E]'>
+            {locate}
+          </div>
+        </div>
+      </body>
     </html>
   )
 }
