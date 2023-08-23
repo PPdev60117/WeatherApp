@@ -23,7 +23,7 @@ export default function Home() {
     .then((data:Weather)=>{setSevenhour(data)
     return(data)})
     .then((data:Weather)=>{return(data.city.coord)})
-    .then((coord)=>fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${coord.lat}&lon=${coord.lon}&appid=${process.env.customKey}`))
+    .then((coord)=>fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${coord.lat}&lon=${coord.lon}&appid=${process.env.customKey}`))
     .then((data)=>data.json())
     .then((data:Airpollution)=>{setAirpol(data)
     setlood(false)})
