@@ -37,7 +37,7 @@ export default function Airquality(props:{data:Airpollution | null |undefined}) 
                 </div>
             </div>
 
-            <div className='flex w-full gap-3'>
+            <div className='flex w-full gap-3 overflow-hidden'>
                 
                 {Object.keys(props.data!.list!.at(0)!.components).map((key:string,num:number)=>{
                 const data = Object.values(props.data!.list!.at(0)!.components)
