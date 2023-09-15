@@ -10,11 +10,16 @@ import { Weather } from '../../libs/type';
 import { Airpollution } from '../../libs/type';
 import { useWindowSize } from '@/app/page';
 
+interface size {
+  width : number,
+  height: number
+}
+
 export default function Page({ params }: { params: { slug: string } }) {
 
     const [sevenhour,setSevenhour] = useState<Weather | null>(null) 
     const [airpol,setAirpol] = useState<Airpollution | null |undefined>()
-    const size = useWindowSize()
+    const size = useWindowSize() as size
 
     useEffect(() => {
       fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${params.slug}&appid=${process.env.customKey}`)

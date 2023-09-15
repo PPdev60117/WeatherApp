@@ -20,7 +20,7 @@ export default function Home() {
   const [sevenhour,setSevenhour] = useState<Weather | null>(null) 
   const [airpol,setAirpol] = useState<Airpollution | null |undefined>()
   const [lood,setlood] = useState<boolean>(true)
-  const size = useWindowSize()
+  const size = useWindowSize() as size
   useEffect(() => {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=London&appid=${process.env.customKey}`)
     .then((res)=>res.json())
