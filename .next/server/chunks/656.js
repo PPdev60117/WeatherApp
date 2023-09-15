@@ -7258,7 +7258,7 @@ const _default = chalk; //# sourceMappingURL=chalk.js.map
 
 /***/ }),
 
-/***/ 57430:
+/***/ 41462:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -7458,7 +7458,7 @@ Object.defineProperty(exports, "DraftModeProvider", ({
         return DraftModeProvider;
     }
 }));
-const _apiutils = __webpack_require__(57430);
+const _apiutils = __webpack_require__(41462);
 class DraftModeProvider {
     constructor(previewProps, req, cookies, mutableCookies){
         var _cookies_get;
@@ -7588,7 +7588,7 @@ const RequestAsyncStorageWrapper = {
 
 /***/ }),
 
-/***/ 80428:
+/***/ 96679:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -8038,7 +8038,7 @@ _export(exports, {
 });
 const _routemodule = __webpack_require__(41073);
 const _requestasyncstoragewrapper = __webpack_require__(32991);
-const _staticgenerationasyncstoragewrapper = __webpack_require__(80428);
+const _staticgenerationasyncstoragewrapper = __webpack_require__(96679);
 const _responsehandlers = __webpack_require__(48537);
 const _http = __webpack_require__(9095);
 const _patchfetch = __webpack_require__(78550);
