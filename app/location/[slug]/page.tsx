@@ -8,16 +8,15 @@ import Sevendays from '../../components/Sevendays';
 import {useEffect,useState} from 'react'
 import { Weather } from '../../libs/type';
 import { Airpollution } from '../../libs/type';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import { useWindowSize } from '@/app/page';
 
 export default function Page({ params }: { params: { slug: string } }) {
 
     const [sevenhour,setSevenhour] = useState<Weather | null>(null) 
     const [airpol,setAirpol] = useState<Airpollution | null |undefined>()
-    const [win,setWin] = useState<number>(0)
-  
+    const size = useWindowSize()
+
     useEffect(() => {
-      setWin(window.innerWidth)
       fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${params.slug}&appid=${process.env.customKey}`)
       .then((res)=>res.json())
       .then((data:Weather)=>{setSevenhour(data)
@@ -28,19 +27,14 @@ export default function Page({ params }: { params: { slug: string } }) {
       .then((data:Airpollution)=>{setAirpol(data)})
       
     },[])
-
-    useEffect(()=>{
-      setWin(window.innerWidth)
-      console.log(win)
-    },[window.innerWidth])
-  
+    
     return (
       <>
         <div className='w-[90%] mx-auto'>
           <Swiper
           className=''
           spaceBetween={5}
-          slidesPerView={win<500 && window.innerWidth!==undefined?3:win<1200&& window.innerWidth!==undefined?5:7}
+          slidesPerView={size.width<500 && size.width!==undefined?3:size.width<1200&& size.width!==undefined?5:7}
         >
           
           {sevenhour?.list?.map((num,number)=>{

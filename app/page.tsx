@@ -16,14 +16,14 @@ export default function Home() {
   const [sevenhour,setSevenhour] = useState<Weather | null>(null) 
   const [airpol,setAirpol] = useState<Airpollution | null |undefined>()
   const [lood,setlood] = useState<boolean>(true)
-
+  const size = useWindowSize()
   useEffect(() => {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=London&appid=${process.env.customKey}`)
     .then((res)=>res.json())
     .then((data:Weather)=>{setSevenhour(data)
     return(data)})
     .then((data:Weather)=>{return(data.city.coord)})
-    .then((coord)=>fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${coord.lat}&lon=${coord.lon}&appid=${process.env.customKey}`))
+    .then((coord)=>fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${coord.lat}&lon=${coord.lon}&appid=${process.env.customKey}`))
     .then((data)=>data.json())
     .then((data:Airpollution)=>{setAirpol(data)
     setlood(false)})
@@ -32,6 +32,8 @@ export default function Home() {
       alert(err)})
   },[])
 
+
+
   return (
     <>
       {lood && <Cardweatherload/>}
@@ -39,7 +41,7 @@ export default function Home() {
         <Swiper
         className=''
         spaceBetween={5}
-        slidesPerView={window.innerWidth<500?3:window.innerWidth<1200?5:7}
+        slidesPerView={size.width<500?3:size.width<1200?5:7}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
@@ -65,4 +67,36 @@ export default function Home() {
 }
     </>
   )
+}
+
+
+export function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    // only execute all the code below in client side
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+     
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
 }

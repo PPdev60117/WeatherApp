@@ -48,7 +48,7 @@ export default function Searchbar() {
           <form onSubmit={submitsearch}>
             <input type="" value={search} onChange={(e):void=>setSearch(e.target.value)} className='text-indigo-400 outline-0 placeholder:text-indigo-400 bg-transparent ml-4 w-full' placeholder='Search...'/>
           </form>
-          <PlaceOutlinedIcon className='m-auto rounded-2xl mr-1 p-1  bg-white text-indigo-400 w-6 h-6 text-xs' onClick={submitsearch}/>
+          <PlaceOutlinedIcon className='m-auto rounded-2xl mr-1 p-1  bg-white text-indigo-400 w-6 h-6 text-xs cursor-pointer' onClick={submitsearch}/>
         </div>
 
         <div className='flex my-auto'>

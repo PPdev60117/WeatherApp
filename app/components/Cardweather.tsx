@@ -71,7 +71,7 @@ const month = ["January","February","March","April","May","June","July","August"
 
   return (
     <>
-        {props.currentdata === undefined || null?<></>:<div className='dark:bg-[#1E1E1E] overflow-hidden px-8 py-8 bg-gradient-to-t from-indigo-500 to-indigo-300 w-3/4 mx-auto rounded-xl text-white relative dark:bg-[#121212]'>
+        {props.currentdata === undefined || null?<></>:<div className='overflow-hidden px-8 py-8 bg-gradient-to-t from-indigo-500 to-indigo-300 w-3/4 mx-auto rounded-xl text-white relative dark:bg-[#121212]'>
             <div className='z-30 -top-5 -right-5 w-20 h-20 absolute bg-yellow-300 rounded-full '></div>
             <div className='z-20 w-28 h-28 -top-9 -right-9 absolute bg-slate-100/[.3] rounded-full'></div>
             <div className='z-20 w-36 h-36 -top-[48px] -right-[48px] absolute bg-slate-50/[.2] rounded-full'></div>
