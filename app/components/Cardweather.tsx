@@ -3,18 +3,6 @@ import WaterDropOutlinedIcon from '@mui/icons-material/WaterDropOutlined';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import AirRoundedIcon from '@mui/icons-material/AirRounded';
 import {pickture} from '../libs/type'
-import City from '../libs/city.list.json'
-import { useEffect, useState } from 'react';
-
-
-interface City {
-    country : string,
-    alpha2 : string,
-    alpha3 : string,
-    numeric : Number,
-    latitude : Number,
-    longitude : Number
-}
 
 export interface Weathercurrent {
     coord: Coord;

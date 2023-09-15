@@ -8,8 +8,12 @@ import Sevendays from './components/Sevendays';
 import {useEffect,useState} from 'react'
 import { Weather } from './libs/type';
 import { Airpollution } from './libs/type';
-import { Suspense } from 'react'
 import {Cardweatherload} from './components/Skeleton';
+
+interface size {
+  width : number,
+  height: number
+}
 
 export default function Home() {
 
@@ -73,7 +77,7 @@ export default function Home() {
 export function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState({
+  const [windowSize, setWindowSize] = useState<size>({
     width: 0,
     height: 0,
   });
