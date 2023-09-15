@@ -1,6 +1,5 @@
 import React from 'react'
-import FlashOnOutlinedIcon from '@mui/icons-material/FlashOnOutlined';
-import { Weather,ListEntity } from '../libs/type';
+import {ListEntity } from '../libs/type';
 import {pickture} from '../libs/type'
 
 export default function Miniday(props:{data:ListEntity }) {

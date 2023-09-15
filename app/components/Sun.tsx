@@ -1,7 +1,7 @@
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import NightsStayOutlinedIcon from '@mui/icons-material/NightsStayOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import { City, Weather } from '../libs/type';
+import {Weather } from '../libs/type';
 
 export default function Sun(props:{data:Weather| null}) {
     const unix = (unix_timestamp:number):string=>{

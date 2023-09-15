@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { usePathname, useSearchParams, useRouter  } from 'next/navigation'
+import { useRouter  } from 'next/navigation'
 import Image from 'next/image';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import LightModeIcon from '@mui/icons-material/LightMode';

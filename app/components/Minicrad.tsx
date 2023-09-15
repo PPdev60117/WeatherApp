@@ -1,14 +1,6 @@
 'use client'
 import AirRoundedIcon from '@mui/icons-material/AirRounded';
 
-interface City {
-    country : string,
-    alpha2 : string,
-    alpha3 : string,
-    numeric : Number,
-    latitude : Number,
-    longitude : Number
-}
 
 export interface Weathercurrent {
     coord: Coord;

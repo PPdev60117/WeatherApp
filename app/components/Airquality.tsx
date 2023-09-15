@@ -1,7 +1,6 @@
 import React from 'react'
 import AirRoundedIcon from '@mui/icons-material/AirRounded';
-import { Airpollution, ListEntity1,Components } from '../libs/type';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Airpollution} from '../libs/type';
 import { Aircard } from './Skeleton';
 import 'swiper/css';
 
